@@ -1,2 +1,3 @@
 langchain==0.3.27
 prompty==0.1.50
+langchain-google-vertexai
