@@ -1,2 +1,2 @@
-ruff==0.12.11
 langchain==0.3.27
+prompty==0.1.50
