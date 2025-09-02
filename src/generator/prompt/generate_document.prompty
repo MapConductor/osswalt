@@ -1,0 +1,9 @@
+---
+model: 
+    api: chat
+---
+user:
+Please generate a sdk document for the following code.
+
+assistant:
+{{ CODE_CONTEXT }}
