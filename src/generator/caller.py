@@ -1,5 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_google_vertexai import VertexAI
+from langchain_core.output_parsers import StrOutputParser
 
 
 class LlmCaller:
@@ -13,9 +14,9 @@ class LlmCaller:
         prompt = ChatPromptTemplate.from_messages(
             [
                 ("system", system_prompt),
-                ("user", "{input}"),
+                ("user", "{user_prompt}"),
             ]
         )
-        chain = prompt | self.model
-        response = chain.invoke({"input": user_prompt})
+        chain = prompt | self.model | StrOutputParser()
+        response = chain.invoke({"user_prompt": user_prompt})
         return response
