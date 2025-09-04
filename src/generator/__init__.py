@@ -12,9 +12,10 @@ logger = getLogger(__name__)
 class DocumentGenerator:
     def __init__(self, code_snippet: str):
         self.code_snippet = code_snippet
+        self.prompt_builder = GeneratePromptBuilder()
 
     def generate(self) -> str:
-        system_prompt, user_prompt = GeneratePromptBuilder().build(self.code_snippet)
+        system_prompt, user_prompt = self.prompt_builder.build(self.code_snippet)
         logger.debug(f"System Prompt: {system_prompt}\nUser Prompt: {user_prompt}")
         response = LlmCaller().call(system_prompt, user_prompt)
         return response
