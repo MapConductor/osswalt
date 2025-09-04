@@ -1,11 +1,13 @@
-from generator.caller import LlmCaller
+from generator import DocumentGenerator
+
+SAMPLE_CODE_SNIPPET = """
+def hello_world():
+    print("Hello, world!")
+"""
 
 
 def main():
-    caller = LlmCaller()
-    system_prompt = "You are a helpful assistant."
-    user_prompt = "What is the capital of Japan?"
-    response = caller.call(system_prompt, user_prompt)
+    response = DocumentGenerator(SAMPLE_CODE_SNIPPET).generate()
     print(response)
 
 
