@@ -1,10 +1,11 @@
-[[messages]]
-role = "user"
+[prompt]
+system = "You are an expert in software documentation. Your task is to generate a high-quality SDK document for the given code snippet. The document should be clear, concise, and well-formatted in Markdown."
 
-[[messages.content]]
-type = "text"
-text = """
-Please generate a sdk document for the following code.
+user = """
+Please generate an SDK document for the following code snippet:
 
-${context_code}
+--- CODE START ---
+{{code_snippet}}
+--- CODE END ---
+{{feedback}}
 """
