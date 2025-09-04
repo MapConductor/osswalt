@@ -1,0 +1,10 @@
+[[messages]]
+role = "user"
+
+[[messages.content]]
+type = "text"
+text = """
+Please generate a sdk document for the following code.
+
+${context_code}
+"""
