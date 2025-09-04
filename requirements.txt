@@ -1,3 +1,5 @@
 langchain==0.3.27
 langchain-google-vertexai==2.0.28
 toml==0.10.2
+pytest==8.4.1
+pytest-mock==3.14.0
